@@ -10,6 +10,9 @@ class Main extends Component {
         <CoinProgress
           activeSection="daily"
           changeSection={(section) => { alert(section.toUpperCase() + " section"); }}
+          coinsLeftToday={30}
+          coinsUsedToday={50}
+          coinsEarnedToday={20}
           dailyProgress={60}
           weeklyProgress={80}
         />

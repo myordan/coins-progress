@@ -37,9 +37,15 @@ class CoinProgressTabDaily extends Component {
 }
 
 CoinProgressTabDaily.propTypes = {
-  coinsLeftToday: PropTypes.number,
-  coinsUsedToday: PropTypes.number,
-  coinsEarnedToday: PropTypes.number,
+  coinsLeftToday: PropTypes.number.isRequired,
+  coinsUsedToday: PropTypes.number.isRequired,
+  coinsEarnedToday: PropTypes.number.isRequired,
+}
+
+CoinProgressTabDaily.defaultProps = {
+  coinsLeftToday: 0,
+  coinsUsedToday: 0,
+  coinsEarnedToday: 0
 }
 
 export default CoinProgressTabDaily
