@@ -9,7 +9,7 @@ import Svg, {
 } from 'react-native-svg';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const HEIGHT = 280;
+const HEIGHT = 300;
 
 class CoinProgressContainer extends Component {
   renderShape() {

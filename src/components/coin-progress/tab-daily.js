@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 class CoinProgressTabDaily extends Component {
+  renderSlide(index) {
+    const descriptions = ["Left for Today", "Used Today", "Earned Today"];
+
+    return (
+      <View style={styles.slide}>
+        <Image
+          resizeMode="contain"
+          style={{width: 100, height: 100}}
+          source={require('../../assets/img/coins.png')}
+        />
+        <Text style={styles.text}>{descriptions[index].toUpperCase()}</Text>
+      </View>
+    )
+  }
   render() {
     return (
       <View style={{flex: 1}}>
         <Swiper style={styles.wrapper}
           dotColor='rgba(255, 255, 255, 0.3)'
           activeDotColor='white'
+          paginationStyle={{
+            bottom: 0
+          }}
         >
-          <View style={styles.slide1}>
-            <Text style={styles.text}>Hello Swiper</Text>
-          </View>
-          <View style={styles.slide2}>
-            <Text style={styles.text}>Beautiful</Text>
-          </View>
-          <View style={styles.slide3}>
-            <Text style={styles.text}>And simple</Text>
-          </View>
+          {this.renderSlide(0)}
+          {this.renderSlide(1)}
+          {this.renderSlide(2)}
         </Swiper>
-        <View style={{height: 50}}>
+        <View style={{height: 65}}>
 
         </View>
       </View>
@@ -32,25 +43,14 @@ const styles = StyleSheet.create({
   wrapper: {
     
   },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide3: {
+  slide: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
     color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 16
   }
 })
 
