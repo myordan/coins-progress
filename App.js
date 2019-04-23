@@ -1,21 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import { Constants } from 'expo';
+
+import Main from "./src/containers/main";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <View style={styles.statusBar}/>
+        <Main/>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  statusBar: {
+    height: Constants.statusBarHeight,
+  },
+
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff'
   },
 });
