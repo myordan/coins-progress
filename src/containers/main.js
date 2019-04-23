@@ -7,7 +7,12 @@ class Main extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <CoinProgress />
+        <CoinProgress
+          activeSection="daily"
+          changeSection={(section) => { alert(section.toUpperCase() + " section"); }}
+          dailyProgress={60}
+          weeklyProgress={80}
+        />
       </View>
     )
   }

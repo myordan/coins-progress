@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, Text, Image } from 'react-native';
 import Swiper from 'react-native-swiper';
+
+import { styles } from './styles';
+
+const DESCRIPTIONS = ["Left for Today", "Used Today", "Earned Today"];
 
 class CoinProgressTabDaily extends Component {
   renderSlide(index) {
-    const descriptions = ["Left for Today", "Used Today", "Earned Today"];
-
     return (
       <View style={styles.slide}>
         <Image
@@ -13,45 +16,30 @@ class CoinProgressTabDaily extends Component {
           style={{width: 100, height: 100}}
           source={require('../../assets/img/coins.png')}
         />
-        <Text style={styles.text}>{descriptions[index].toUpperCase()}</Text>
+        <Text style={styles.text}>{DESCRIPTIONS[index].toUpperCase()}</Text>
       </View>
     )
   }
+
   render() {
     return (
-      <View style={{flex: 1}}>
-        <Swiper style={styles.wrapper}
-          dotColor='rgba(255, 255, 255, 0.3)'
-          activeDotColor='white'
-          paginationStyle={{
-            bottom: 0
-          }}
-        >
-          {this.renderSlide(0)}
-          {this.renderSlide(1)}
-          {this.renderSlide(2)}
-        </Swiper>
-        <View style={{height: 65}}>
-
-        </View>
-      </View>
+      <Swiper
+        dotColor='rgba(255, 255, 255, 0.3)'
+        activeDotColor='white'
+        paginationStyle={{ bottom: 0 }}
+      >
+        {this.renderSlide(0)}
+        {this.renderSlide(1)}
+        {this.renderSlide(2)}
+      </Swiper>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    
-  },
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 16
-  }
-})
+CoinProgressTabDaily.propTypes = {
+  coinsLeftToday: PropTypes.number,
+  coinsUsedToday: PropTypes.number,
+  coinsEarnedToday: PropTypes.number,
+}
 
 export default CoinProgressTabDaily

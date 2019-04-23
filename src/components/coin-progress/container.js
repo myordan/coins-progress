@@ -9,13 +9,12 @@ import Svg, {
 } from 'react-native-svg';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const GRADIENT_START_COLOR = '#66d38a';
+const GRADIENT_END_COLOR = '#43c971';
 const HEIGHT = 300;
 
 class CoinProgressContainer extends Component {
   renderShape() {
-    const gradientStartColor = '#66d38a';
-    const gradientEndColor = '#43c971';
-
     const width = SCREEN_WIDTH;
     const height = HEIGHT;
 
@@ -34,8 +33,8 @@ class CoinProgressContainer extends Component {
       >
         <Defs>
           <LinearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-            <Stop stopColor={gradientStartColor} offset="0%"></Stop>
-            <Stop stopColor={gradientEndColor} offset="100%"></Stop>
+            <Stop stopColor={GRADIENT_START_COLOR} offset="0%"></Stop>
+            <Stop stopColor={GRADIENT_END_COLOR} offset="100%"></Stop>
           </LinearGradient>
         </Defs>
         
