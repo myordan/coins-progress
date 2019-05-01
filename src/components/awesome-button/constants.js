@@ -1,0 +1,10 @@
+export const ANIMATED_SPRING_FRICTION = 6.75;
+export const ANIMATED_SPRING_TENSION = 100;
+export const ANIMATED_TIMING_OFF = 100;
+export const ANIMATED_TIMING_IN = 200;
+export const DEFAULT_RAISE_LEVEL = 4;
+export const DEFAULT_HEIGHT = 60;
+export const DEFAULT_WIDTH = null;
+export const DEFAULT_BORDER_RADIUS = 4;
+export const DEFAULT_BACKGROUND_DARKER = "#9f9f9f";
+export const DEFAULT_BACKGROUND_SHADOW = "rgba(0, 0, 0, 0.15)";
